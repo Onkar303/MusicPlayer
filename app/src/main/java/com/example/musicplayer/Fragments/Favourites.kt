@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.musicplayer.R
 
 class Favourites: Fragment() {
 
@@ -18,7 +19,7 @@ class Favourites: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
+        return inflater.inflate(R.layout.favourites,container,false);
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

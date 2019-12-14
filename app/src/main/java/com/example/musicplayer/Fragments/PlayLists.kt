@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.musicplayer.R
 
 class PlayLists:Fragment(){
 
@@ -17,7 +18,7 @@ class PlayLists:Fragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
+        return inflater.inflate(R.layout.playlists,container,false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
