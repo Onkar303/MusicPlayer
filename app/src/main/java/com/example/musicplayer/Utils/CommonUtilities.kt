@@ -2,20 +2,29 @@ package com.example.musicplayer.Utils
 
 import android.content.Context
 import android.content.DialogInterface
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
+import android.os.Build
+import android.view.LayoutInflater
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
+import com.example.musicplayer.R
 
 class CommonUtilities{
 
     companion object{
-        fun alertDialog(context: Context,title:String,message:String)
+        @RequiresApi(Build.VERSION_CODES.M)
+        fun alertDialog(context: Context, title:String, message:String)
         {
 
-            val alertdialog = AlertDialog.Builder(context)
-            alertdialog.setMessage(message)
-            alertdialog.setTitle(title)
-            alertdialog.setPositiveButton("ok", DialogInterface.OnClickListener { dialog, which -> dialog.dismiss() })
-            alertdialog.create().show()
+            val alertdialog = AlertDialog.Builder(context,R.style.AppTheme)
+            val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+            val view = inflater.inflate(R.layout.music_option_layout,null)
+            alertdialog.setView(view)
+            val dialog = alertdialog.create()
+            dialog.show()
+            dialog.window?.setBackgroundDrawable(ColorDrawable(context.getColor(android.R.color.transparent)))
         }
 
 

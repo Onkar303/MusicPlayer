@@ -76,7 +76,11 @@
         app:headerLayout="@layout/navigation_header"
         android:background="@drawable/navigation_drawer_background"
         android:id="@+id/naviagtionView"
-        />
+        >
+
+
+
+    </com.google.android.material.navigation.NavigationView>
 
 </androidx.drawerlayout.widget.DrawerLayout>
 
