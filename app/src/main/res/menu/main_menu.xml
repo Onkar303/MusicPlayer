@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item android:title="Developer"
+        android:id="@+id/developerId"
+        android:icon="@drawable/developer_icon"/>
+    <item android:title="Share"
+        android:icon="@drawable/share_icon"
+        android:id="@+id/ShareId"/>
+    <item android:title="About the App"
+        android:id="@+id/AboutId"
+        android:icon="@drawable/about_icon"/>
+    <item android:title="Exit"
+        android:id="@+id/ExitId"
+        android:icon="@drawable/exit_icon"
+        />
+
+
+
+</menu>

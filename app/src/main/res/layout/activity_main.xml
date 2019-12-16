@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
+    tools:openDrawer="left"
     >
 
 
@@ -19,34 +20,20 @@
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@drawable/tablayout_background">
 
 
-            <com.google.android.material.appbar.CollapsingToolbarLayout
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-
-                <androidx.appcompat.widget.Toolbar
-                    android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    android:layout_gravity="bottom">
-
-                </androidx.appcompat.widget.Toolbar>
 
                 <com.google.android.material.tabs.TabLayout
                     android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
+                    android:layout_height="wrap_content"
                     android:id="@+id/tabBar"
                     android:layout_gravity="bottom"
                     app:layout_collapseMode="pin"
-                    android:background="@color/colorAccent"
+                    app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
                     />
-
-
-
-            </com.google.android.material.appbar.CollapsingToolbarLayout>
 
 
         </com.google.android.material.appbar.AppBarLayout>
@@ -69,6 +56,15 @@
         </androidx.core.widget.NestedScrollView>
 
 
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:id="@+id/fab"
+            android:src="@drawable/add_icon_fab"/>
+
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
@@ -76,6 +72,10 @@
         android:layout_width="250dp"
         android:layout_height="match_parent"
         android:layout_gravity ="left"
+        app:menu="@menu/main_menu"
+        app:headerLayout="@layout/navigation_header"
+        android:background="@drawable/navigation_drawer_background"
+        android:id="@+id/naviagtionView"
         />
 
 </androidx.drawerlayout.widget.DrawerLayout>

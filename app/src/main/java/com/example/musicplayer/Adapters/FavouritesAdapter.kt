@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.musicplayer.Model.FavouritesModel
 import com.example.musicplayer.R
 import com.example.musicplayer.ViewHolders.FavouritesViewHolder
-import com.example.musicplayer.ViewHolders.MusicLibraryViewHolder
 
 class FavouritesAdapter(var context: Context,var list:ArrayList<FavouritesModel>):RecyclerView.Adapter<FavouritesViewHolder>() {
 
@@ -15,7 +14,7 @@ class FavouritesAdapter(var context: Context,var list:ArrayList<FavouritesModel>
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavouritesViewHolder {
 
         var inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-        var v = inflater.inflate(R.layout.musiclibrarycard,parent,false)
+        var v = inflater.inflate(R.layout.music_card,parent,false)
         return FavouritesViewHolder(v)
 
 
@@ -27,6 +26,7 @@ class FavouritesAdapter(var context: Context,var list:ArrayList<FavouritesModel>
 
     override fun onBindViewHolder(holder: FavouritesViewHolder, position: Int) {
 
+        holder.name.text = list[position].name
     }
 
 
