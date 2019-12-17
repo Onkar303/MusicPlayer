@@ -18,12 +18,13 @@ class CommonUtilities{
         fun alertDialog(context: Context, title:String, message:String)
         {
 
-            val alertdialog = AlertDialog.Builder(context,R.style.AppTheme)
+            val alertdialog = AlertDialog.Builder(context)
             val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             val view = inflater.inflate(R.layout.music_option_layout,null)
             alertdialog.setView(view)
             val dialog = alertdialog.create()
             dialog.show()
+            dialog.window?.setWindowAnimations(R.style.AppTheme)
             dialog.window?.setBackgroundDrawable(ColorDrawable(context.getColor(android.R.color.transparent)))
         }
 
