@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -48,8 +49,9 @@ class MusicLibrary :Fragment(){
 
 
         musicadapter = MusicLibraryAdapter(activity!!,list)
-
         musicList.adapter=musicadapter
+        val animation = AnimationUtils.loadLayoutAnimation(context,R.anim.layout_recycler_animation)
+        musicList.layoutAnimation = animation
 
     }
 }

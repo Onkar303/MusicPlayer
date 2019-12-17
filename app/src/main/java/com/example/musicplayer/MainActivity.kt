@@ -5,21 +5,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
-import android.widget.Toast
-import androidx.drawerlayout.widget.DrawerLayout
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import androidx.viewpager.widget.ViewPager
 import com.example.musicplayer.Adapters.MainActivityAdapter
 import com.example.musicplayer.Fragments.Favourites
-import com.example.musicplayer.Fragments.FragmentModel
+import com.example.musicplayer.Model.FragmentModel
 import com.example.musicplayer.Fragments.MusicLibrary
 import com.example.musicplayer.Fragments.PlayLists
 import com.example.musicplayer.Utils.CommonUtilities
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.tabs.TabLayout
-import kotlinx.android.synthetic.main.activity_main.view.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener,NavigationView.OnNavigationItemSelectedListener {
 
@@ -52,9 +47,24 @@ class MainActivity : AppCompatActivity(), View.OnClickListener,NavigationView.On
 
         screens = ArrayList()
 
-        screens.add(FragmentModel(MusicLibrary(),"Music"))
-        screens.add(FragmentModel(Favourites(),"Favourites"))
-        screens.add(FragmentModel(PlayLists(),"PlayLists"))
+        screens.add(
+            FragmentModel(
+                MusicLibrary(),
+                "Music"
+            )
+        )
+        screens.add(
+            FragmentModel(
+                Favourites(),
+                "Favourites"
+            )
+        )
+        screens.add(
+            FragmentModel(
+                PlayLists(),
+                "PlayLists"
+            )
+        )
 
         viewPagerAdaper = MainActivityAdapter(supportFragmentManager,1,this,screens)
 
